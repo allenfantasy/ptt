@@ -1,0 +1,69 @@
+/*!
+ *  Kwicks: Sexy Sliding Panels for jQuery - v2.0.0
+ *  http://devsmash.com/projects/kwicks
+ *
+ *  Copyright 2012 Jeremy Martin (jmar777)
+ *  Released under the MIT license
+ *  http://www.opensource.org/licenses/mit-license.php
+ */
+/*
+ *  This file contains styles that are common to all kwicks instances.  Note that each kwicks instance requires
+ *  additional styling - please see the examples for more info.
+ */
+.kwicks {
+	display: block;
+	list-style-type: none;
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.kwicks > * {
+	display: block;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+.kwicks.kwicks-processed > * {
+	margin: 0;
+	position: absolute;
+}
+.kwicks-horizontal > * {
+	float: left;
+}
+.kwicks-horizontal > li {
+}
+.kwicks-horizontal > :first-child {
+	margin-left: 0;
+}
+.kwicks-vertical > :first-child {
+	margin-top: 0;
+}
+#panel-1 {
+	background-color: #53b388;
+}
+#panel-2 {
+	background-color: #5a69a9;
+}
+#panel-3 {
+	background-color: #c26468;
+}
+#panel-4 {
+	background-color: #bf7cc7;
+}
+div.kwick-page{
+	margin:auto 0;
+}
+div.kwick-einz-bild{
+	height:290px;
+}
+div.klick-einz-text{
+	background-color: #000000;
+  color: #FFFFFF;
+  height: 100px;
+  margin-left: 20px;
+  opacity: 0.7;
+  overflow: hidden;
+  padding: 0 10px;
+}
+

@@ -1,0 +1,24 @@
+name = ptt
+description = Theme fuer ptt erstellt von hippo@borsch.net. Revised by Allen ( dev.cna@borsch.net ) 
+version = 1.0
+core = 7.x
+stylesheets[all][] = style.css
+stylesheets[all][] = nice_menus_custom.css
+
+
+regions[header] = Header
+regions[head_menu] = Head Menu
+regions[head_country] = Country on Subpage
+regions[left_contact] = Left contact
+regions[preface] = Preface
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+regions[help] = Help
+regions[content] = Content
+regions[content_bottom] = Content bottom
+regions[footer] = Footer
+regions[highlighted] = Highlighted
+regions[banner] = Banner
+regions[superfish_menu] = Superfish menu
+regions[powered_by] = Powered by
+regions[bottom] = Bottom
