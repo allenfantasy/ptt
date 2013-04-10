@@ -5,10 +5,10 @@
 		</div>
 		<div class="title">
 			<h3><?php echo $content['body']['#object']->title; ?></h3>
-		</div>		
+		</div>
 		<div class="content">
 			<?php echo $content['body']['#object']->body['und'][0]['value']; ?>
-		</div>	
+		</div>
 		<div class="info1">
 			<b class="label">Location :</b> <?php echo $content['body']['#object']->field_location['und'][0]['value']; ?>
 		</div>
@@ -16,7 +16,7 @@
 			<b class="label">Price :</b> <?php echo $content['body']['#object']->field_price['und'][0]['value']; ?> <?php echo $content['body']['#object']->field_currency['und'][0]['taxonomy_term']->name; ?> <?php echo $content['body']['#object']->field_price_unit['und'][0]['taxonomy_term']->name; ?>
 		</div>
 		<div class="info3">
-			<b class="label">Language :</b> 
+			<b class="label">Language :</b>
 			<?php
 				for($i = 0; $i < count($content['body']['#object']->field_language_offer['und']); $i++){
 					echo $content['body']['#object']->field_language_offer['und'][$i]['value'];
@@ -40,7 +40,7 @@
 		</div>
 		<?php //print_r($content); ?>
 		<div class="to-buy">
-			<form action="/basket?option=add" method="post">
+			<form action="/en/basket?option=add" method="post">
 				<input type="hidden" name="code" value="<?php echo $content['body']['#object']->field_code['und'][0]['value'];?>" />
 				<input type="hidden" name="price" value="<?php echo $content['body']['#object']->field_price['und'][0]['value']; ?> <?php echo $content['body']['#object']->field_currency['und'][0]['taxonomy_term']->name; ?> <?php echo $content['body']['#object']->field_price_unit['und'][0]['taxonomy_term']->name; ?>"/>
 				<input type="hidden" name="title" value="<?php echo $content['body']['#object']->title; ?>"/>
@@ -70,10 +70,10 @@
 		</div>
 		<div class="title">
 			<h3><?php echo $content['body']['#object']->title; ?></h3>
-		</div>			
+		</div>
 		<div class="content">
 			<?php echo $content['body']['#object']->body['und'][0]['value']; ?>
-		</div>	
+		</div>
 		<div class="info1">
 			<b class="label">Ort :</b> <?php echo $content['body']['#object']->field_location['und'][0]['value']; ?>
 		</div>
@@ -81,7 +81,7 @@
 			<b class="label">Preis :</b> <?php echo $content['body']['#object']->field_price['und'][0]['value']; ?> <?php echo $content['body']['#object']->field_currency['und'][0]['taxonomy_term']->name; ?> <?php echo $content['body']['#object']->field_price_unit['und'][0]['taxonomy_term']->name; ?>
 		</div>
 		<div class="info3">
-			<b class="label">Sprache :</b> 
+			<b class="label">Sprache :</b>
 			<?php
 				//for($i = 0; $i < count($content['body']['#object']->field_language_offer['und']); $i++){
 					$language_value =  $content['body']['#object']->field_language_offer['und'][0]['value'];
@@ -96,7 +96,7 @@
 						$language_value = 'Neutral';
 						break;
 					}
-					echo $language_value;	
+					echo $language_value;
 
 				//	if(($i+1)!=count($content['body']['#object']->field_language_offer['und'])){
 				//	echo ' , ';

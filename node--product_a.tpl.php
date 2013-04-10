@@ -6,11 +6,11 @@
 
 		<div class="title">
 			<h3><?php echo $content['body']['#object']->title; ?></h3>
-		</div>			
+		</div>
 
 		<div class="content">
 			<?php echo $content['body']['#object']->body['und'][0]['value']; ?>
-		</div>	
+		</div>
 
 		<?php if($content['body']['#object']->field_duration['und'][0]['value']) { ?>
 		<?php // && $content['body']['#object']->field_country['und'][0]['taxonomy_term']->name != 'Special') ?>
@@ -53,12 +53,12 @@
 		</div>
 
 		<div class="to-buy">
-			<form action="/basket?option=add" method="post">
+			<form action="/en/basket?option=add" method="post">
 				<input type="hidden" name="code" value="<?php echo $content['body']['#object']->field_code['und'][0]['value'];?>" />
 				<input type="hidden" name="price" value="<?php echo $content['body']['#object']->field_price['und'][0]['value']; ?> <?php echo $content['body']['#object']->field_currency['und'][0]['taxonomy_term']->name; ?>"/>
 				<input type="hidden" name="title" value="<?php echo $content['body']['#object']->title; ?>"/>
 				<input type="hidden" name="url" value="<?php echo $variables['node_url']; ?>" />
-				<?php 
+				<?php
 					$code = $content['body']['#object']->field_code['und'][0]['value'];
 					$check = false;
 					for($k=0;$k<count($_SESSION['basket']);$k++){
@@ -84,11 +84,11 @@
 
 		<div class="title">
 			<h3><?php echo $content['body']['#object']->title; ?></h3>
-		</div>			
+		</div>
 
 		<div class="content">
 			<?php echo $content['body']['#object']->body['und'][0]['value']; ?>
-		</div>	
+		</div>
 
 		<?php if($content['body']['#object']->field_duration['und'][0]['value']) { ?>
 		<?php //if($content['body']['#object']->field_country['und'][0]['taxonomy_term']->name != 'Special') { ?>
@@ -119,7 +119,7 @@
 						$language_value = 'Neutral';
 						break;
 					}
-					echo $language_value;	
+					echo $language_value;
 			?>
 		</div>
 		<?php } ?>
@@ -130,7 +130,7 @@
 			<?php	echo $content['body']['#object']->field_start['und'][0]['value']; ?>
 		</div>
 		<?php } ?>
-	
+
 		<?php if($content['body']['#object']->field_destination['und'][0]['value']) { ?>
 		<div class="info5">
 			<b class="label">Ziel :</b>
@@ -150,7 +150,7 @@
 				<input type="hidden" name="price" value="<?php echo $content['body']['#object']->field_price['und'][0]['value']; ?> <?php echo $content['body']['#object']->field_currency['und'][0]['taxonomy_term']->name; ?>"/>
 				<input type="hidden" name="title" value="<?php echo $content['body']['#object']->title; ?>"/>
 				<input type="hidden" name="url" value="<?php echo $variables['node_url']; ?>" />
-				<?php 
+				<?php
 					$code = $content['body']['#object']->field_code['und'][0]['value'];
 					$check = false;
 					for($k=0;$k<count($_SESSION['basket']);$k++){
@@ -162,7 +162,7 @@
 				<?php if (!$check) { ?>
 				<input type="submit" value="> In den Infokorb" />
 				<?php } else { ?>
-				<span>Produkt ist schon </span><a href="/de/korb">auf Warenkorb</a>	
+				<span>Produkt ist schon </span><a href="/de/korb">auf Warenkorb</a>
 				<?php } ?>
 			</form>
 		</div>

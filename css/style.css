@@ -120,7 +120,7 @@ div#admin-toolbar span.admin-toggle{
 .contentleft iframe {
 	width: 100%;
 	max-width: 680px;
-	height: 600px;
+	height: 350px;
 	border:none;
 }
 .contentleft iframe[width][height] {
@@ -290,6 +290,7 @@ div.node-country-info div.content {
 	float:none;
 	width: 100%;
 }
+.contentleft .view.view-taxonomy-term .views-image,
 .contentleft .view.view-product .view-image {
 	margin-right: 15px;
 	width:70px;
@@ -301,6 +302,7 @@ div.node-country-info div.content {
 	margin-top: 5px;
 	float: left;
 }
+.contentleft .view.view-taxonomy-term .views-row h1,
 .contentleft .view.view-product .views-row h1 {
     font-weight: bold;
     font-size: 17px;
@@ -310,6 +312,7 @@ div.node-country-info div.content {
     margin-top: 5px;
     margin-bottom: 10px;
 }
+.contentleft .view.view-taxonomy-term .views-row .body,
 .contentleft .view.view-product .views-row .body {
     width: 500px;
     /*float: left;*/
@@ -321,9 +324,12 @@ div.node-country-info div.content {
 		overflow: auto;
 		text-indent: 20px;
 }
+.contentleft .view.view-taxonomy-term .views-row .body > p,
 .contentleft .view-product.view .views-row .body > p {
 	margin: 0;
 }
+.contentleft .view.view-taxonomy-term .views-row p.start,
+.contentleft .view.view-taxonomy-term .views-row p.destination,
 .contentleft .view-product.view .views-row p.start,
 .contentleft .view-product.view .views-row p.destination {
 	/*float: left;*/
@@ -337,17 +343,16 @@ div.node-country-info div.content {
 	text-indent: 0;
 	clear: both;
 }
+.contentleft .view.view-taxonomy-term .views-row span,
 .contentleft .view-product.view .views-row span {
 	font-size: 13px;
 }
+.contentleft .view.view-taxonomy-term .views-row span.duration-label,
 .contentleft .view-product.view .views-row span.duration-label {
 	font-weight: bold;
 	margin-left: 85px;
 }
-.contentleft .view-product.view .views-row.partner p {
-	height: auto;
-	float: none;
-}
+.contentleft .view.view-taxonomy-term .views-row a,
 .contentleft .view-product.view .views-row a {
     font-size: 14px;
     color: #FFF;
@@ -355,9 +360,6 @@ div.node-country-info div.content {
     padding: 5px 50px 5px 10px;
     float: right;
     margin: 0 40px 10px 0;
-}
-.contentleft .view-product.view .views-row .iframe a {
-	background-color: transparent;
 }
 .contentleft .view .item-list {
 	margin-top:20px;
@@ -542,7 +544,7 @@ div.logozone div.right{
 	float:left;
 }
 .region-head-country .block-menu ul.menu li.active-trail div.before {
-	background-image:url('img/home-li-before.png');
+	background-image:url('../img/home-li-before.png');
 	background-repeat:no-repeat;
 	width:10px;
 	height:46px;
@@ -553,7 +555,7 @@ div.logozone div.right{
 	font-size: 20px;
 }
 .region-head-country .block-menu ul.menu li.active-trail div.text {
-	background-image:url('img/home-li-text.png');
+	background-image:url('../img/home-li-text.png');
 	background-repeat:repeat-x;
 	height: 31px;
   padding-top: 15px;
@@ -561,7 +563,7 @@ div.logozone div.right{
   padding-left:10px;
 }
 .region-head-country .block-menu ul.menu li.active-trail div.after{
-	background-image:url('img/home-li-after.png');
+	background-image:url('../img/home-li-after.png');
 	background-repeat:no-repeat;
 	width:10px;
 	height:46px;
@@ -653,7 +655,7 @@ div.logozone div.right{
 	padding: 0;
 }
 .region-sidebar-first ul li, .region-sidebar-second ul li {
-	list-style-image: url('img/list-style-arrow.png');
+	list-style-image: url('../img/list-style-arrow.png');
 	padding-top: 12px;
 }
 
@@ -725,7 +727,7 @@ div.logozone div.right{
 	margin-bottom:0;
 }
 #block-views-node-info-block-2 ul li {
-	list-style-image: url('img/check.png');
+	list-style-image: url('../img/check.png');
 	list-style-position: outside;
 	padding-top: 0;
 }
@@ -815,7 +817,7 @@ div.logozone div.right{
 	margin: 0 15px;
 }
 .region-footer .block li {
-	list-style-image: url('img/list-style-arrow.png');
+	list-style-image: url('../img/list-style-arrow.png');
 	border-bottom: rgba(255,255,255, .20) 1px solid;
 	padding: 5px 0 9px 0;
 }
@@ -876,16 +878,16 @@ div.logozone div.right{
 
 }
 #block-ptt-contact-info-contact-info .contact_phone {
-	background: url('img/footer-icon-phone.png');
+	background: url('../img/footer-icon-phone.png');
 }
 #block-ptt-contact-info-contact-info .contact_email {
-	background: url('img/footer-icon-mail.png');
+	background: url('../img/footer-icon-mail.png');
 }
 #block-ptt-contact-info-contact-info .contact_address {
-	background: url('img/footer-icon-address.png');
+	background: url('../img/footer-icon-address.png');
 }
 #block-ptt-contact-info-contact-info .contact_skype {
-	background: url('img/footer-icon-skype.png');
+	background: url('../img/footer-icon-skype.png');
 }
 #block-ptt-contact-info-contact-info .icons img {
 	margin-right: 10px;

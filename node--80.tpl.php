@@ -1,21 +1,21 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-	<?php 
+	<?php
 		//global $language;
 		//$lang = $language->language;
 	?>
-	<?php 
+	<?php
 		$string1 = 'Max product is 10';
 		$string1 = 'Your New Product: ';
 		$string2 = 'has been added';
 		$string3 = 'This product is already added';
-		$string4 = 'Check' ; 
+		$string4 = 'Check' ;
 		$string5 = 'Remove'	;
 		$string_code = 'Code';
 		$string_title = 'Title';
 		$string_price = 'Price';
-		$form_action = '/inquiry';
+		$form_action = '/en/inquiry';
 		$submit_value = 'Send enquiry';
-		$noproduct = 'Sorry, Your cart is empty';	
+		$noproduct = 'Sorry, Your cart is empty';
 	?>
 
 	<?php
@@ -23,7 +23,7 @@
 		//1 add = add new item to basket
 		//2 remove + target to remove = remove item on target(code)
 		//3 reset = reset basket
-		
+
 		if($_GET['option']=="add"){
 			$code = $_POST['code'];
 			$title = $_POST['title'];
@@ -65,7 +65,7 @@
 				}else{
 					print $string3;
 				}
-			}		
+			}
 		}else if($_GET['option']=='remove'){
 				//create new temp array with out remove-code
 				$target=$_GET['target'];
@@ -75,14 +75,14 @@
 						$temp['basket'][$k]['code']=$_SESSION['basket'][$j]['code'];
 						$temp['basket'][$k]['title']=$_SESSION['basket'][$j]['title'];
 						$temp['basket'][$k]['price']=$_SESSION['basket'][$j]['price'];
-						$temp['basket'][$k]['url']=$_SESSION['basket'][$j]['url'];	
+						$temp['basket'][$k]['url']=$_SESSION['basket'][$j]['url'];
 						$k++;
 					}
-					
+
 				}
 				$_SESSION['basket']=$temp['basket'];
-				
-		
+
+
 		}else if($_GET['option']=='reset'){
 				$_SESSION['basket']=="";
 				unset($_SESSION['basket']);
@@ -117,24 +117,24 @@
 
 				print '<td><div class="show">';
 					print '<a href="' . $_SESSION['basket'][$i]['url'] . '">' . $string4 . '</a>';
-				print '</div></td>';					
+				print '</div></td>';
 
 				print '<td><div class="action">';
-					print '<a href="/basket?option=remove&target=' . $_SESSION['basket'][$i]['code'] . '">' . $string5 . '</a>';
-				print '</div></td>';					
+					print '<a href="/en/basket?option=remove&target=' . $_SESSION['basket'][$i]['code'] . '">' . $string5 . '</a>';
+				print '</div></td>';
 
-				print '</tr>';	
+				print '</tr>';
 			}
 		print '</table></div>';
 		}
-		
+
 	?>
 	<?php if(count($_SESSION['basket'])!=0) { ?>
-			<form method="get" action="<?php print $form_action; ?>"> 
+			<form method="get" action="<?php print $form_action; ?>">
 				<?php for($i=0;$i<count($_SESSION['basket']); $i++){ ?>
 					<input type="hidden" name="info<?php print ($i+1)?>" value="code : <?php print $_SESSION['basket'][$i]['code'].' Title : '.$_SESSION['basket'][$i]['title'].'  price : '.$_SESSION['basket'][$i]['price']; ?>" />
 					<!--<input type="hidden" name="info<?php print ($i+1)?>" value="code : <?php print $_SESSION['basket'][$i]['code']; ?>" />-->
-				<?php } ?>			
+				<?php } ?>
 				<input type="submit" value="<?php print $submit_value; ?>"/>
 			</form>
 	<?php }else{ ?>

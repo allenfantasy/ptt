@@ -1,9 +1,9 @@
 name = ptt
-description = Theme fuer ptt erstellt von hippo@borsch.net. Revised by Allen ( dev.cna@borsch.net ) 
+description = Theme fuer ptt erstellt von hippo@borsch.net. Revised by Allen ( dev.cna@borsch.net )
 version = 1.0
 core = 7.x
-stylesheets[all][] = style.css
-stylesheets[all][] = nice_menus_custom.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/nice_menus_custom.css
 
 
 regions[header] = Header

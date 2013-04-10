@@ -1,4 +1,5 @@
-/* This css file serves as a template for styling your kwicks.  Feel free to modify, but please make note of the comments - some of them are important. */
+/* This css file serves as a template for styling your kwicks.
+ * Feel free to modify, but please make note of the comments - some of them are important. */
 .kwicks {
 	display: block;
 	list-style-type: none;
@@ -35,11 +36,11 @@
 /*}
 .kwicks.kwicks-horizontal li {*/
 	/* This is optional and will be disregarded by the script.  However, it should be provided for non-JS enabled browsers. */
-/*	margin-right: 5px; /*Set to same as spacing option. */	
+/*	margin-right: 5px; /*Set to same as spacing option. */
 /*	float: left;
 }*/
 
-#panel-1 { 
+#panel-1 {
 	background-color: #53b388;
 }
 #panel-2 {
@@ -48,7 +49,7 @@
 #panel-3 {
 	background-color: #c26468;
 }
-#panel-4 { 
+#panel-4 {
 	background-color: #bf7cc7;
 }
 /*.kwicks.kwicks-horizontal #kwick_4 {
