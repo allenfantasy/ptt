@@ -35,7 +35,8 @@ function ptt_preprocess_page(&$variables) {
     $url_array = explode('/', $url);
     $url_array_length = count($url_array);
 
-    if ( ($url_array[0] == 'australia' || $url_array[0] == 'fiji' || $url_array[0] == 'new-zealand' || $url_array[0] == 'special') && $url_array_length == 1) {
+    if ( ($url_array[0] == 'australia' || $url_array[0] == 'fiji' || $url_array[0] == 'new-zealand'
+      || $url_array[0] == 'special') && $url_array_length == 1) {
         $variables['display_breadcrumb'] = false;
         $variables['front'] = 'front';
     }
@@ -59,7 +60,8 @@ function ptt_menu_link(array $variables) {
 			$sub_menu = drupal_render($element['#below']);
 		}
 	$output = l($element['#title'], $element['#href'], $element['#localized_options']);
-	return '<li' . drupal_attributes($element['#attributes']) . '><div class="before"></div><div class="text">' . $output . $sub_menu . '</div><div class="after"></div></li>';
+    return '<li' . drupal_attributes($element['#attributes']) . '><div class="before"></div><div class="text">' .
+      $output . $sub_menu . '</div><div class="after"></div></li>';
 //  }
 }
 
@@ -240,3 +242,30 @@ function ptt_breadcrumb($variables) {
 		$crumbs .= "</div>";
     return $crumbs;
 }
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @see contact_site_form()
+ */
+function ptt_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  $form['#submit'][] = 'ptt_contact_form_blocks_submit';
+}
+
+/**
+ * Extra form submission handler for contact_site_form().
+ */
+function ptt_contact_form_blocks_submit($form, &$form_state) {
+  // Redirect user back to page with form instead of frontpage.
+	global $language;
+	$lang = $language->language;
+  if ($lang == 'en') {
+    $form_state['redirect'] = 'thank-you';
+  }
+  else {
+    $form_state['redirect'] = 'danke';
+  }
+}
+
+?>
