@@ -46,7 +46,6 @@ function ptt_preprocess_page(&$variables) {
         $variables['green'] = 'green';
     }
 		// Add custom Javascript
-		//drupal_add_js(drupal_get_path('theme','ptt') . "/js/jquery-1.2.6.min.js",'file');
 		drupal_add_js(drupal_get_path('theme','ptt') . "/js/ptt.js",'file');
 }
 

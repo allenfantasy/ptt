@@ -1,6 +1,0 @@
-<?php /* output the view */ ?>
-<h2><?php print($variables['view']->result[0]->_field_data['nid']['entity']->title); ?></h2>
-<p><?php print($variables['view']->result[0]->_field_data['nid']['entity']->body['und'][0]['value']); ?></p>
-<iframe src="<?php 
-	print($variables['view']->result[0]->_field_data['nid']['entity']->field_iframe_links['und'][0]['value']); 
-?>" style="width:680px; height: 300px" ></iframe>
