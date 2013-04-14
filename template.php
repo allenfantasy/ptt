@@ -35,16 +35,15 @@ function ptt_preprocess_page(&$variables) {
     $url_array = explode('/', $url);
     $url_array_length = count($url_array);
 
-    if ( ($url_array[0] == 'australia' || $url_array[0] == 'fiji' || $url_array[0] == 'new-zealand'
-      || $url_array[0] == 'special') && $url_array_length == 1) {
+    $countries = array('australia', 'fiji', 'new-zealand', 'special');
+
+    if ( in_array($url_array[0], $countries) && $url_array_length == 1) {
         $variables['display_breadcrumb'] = false;
         $variables['front'] = 'front';
-    }
-    else { $variables['display_breadcrumb'] = true; }
+    } else { $variables['display_breadcrumb'] = true; }
 
-    if (substr_count(drupal_get_path_alias(current_path()), 'info')){
-        $variables['green'] = 'green';
-    }
+    if (substr_count($url, 'info')){ $variables['green'] = 'green'; }
+
 		// Add custom Javascript
 		drupal_add_js(drupal_get_path('theme','ptt') . "/js/ptt.js",'file');
 }
@@ -65,7 +64,7 @@ function ptt_menu_link(array $variables) {
 }
 
 // For breadcrumb
-function ptt_breadcrumb($variables) {
+/*function ptt_breadcrumb($variables) {
 	// Check the current language
 	global $language;
 	$lang = $language->language;
@@ -74,173 +73,11 @@ function ptt_breadcrumb($variables) {
 	$home_text = ($lang == 'en')? "Home" : "Startseite";
 	$crumbs .= "<a href='/'>$home_text</a>";
 
-    $url = drupal_get_path_alias(current_path());
-    $url_array = explode('/', $url);
-    $url_array_length = count($url_array);
-	$url_base = base_path();
-
-	$countries = array('australia', 'australien', 'new-zealand', 'neuseeland', 'fiji', 'fidschi');
-		if(in_array($url_array[0],$countries)) {
-			if($url_array[1] == 'product' || $url_array[1] == 'info' || $url_array[1] == 'partner' ) { // Product, Info
-				$country = $url_array[0];
-				switch ($country) {
-					case 'australien':
-						$country_link = $url_base . 'australia';
-						break;
-					case 'neuseeland':
-						$country_link = $url_base . 'fiji';
-						break;
-					case 'fidschi':
-						$country_link = $url_base . 'new-zealand';
-						break;
-					case 'new-zealand':
-						$country = 'New Zealand';
-						break;
-					default:break;
-				}
-				$crumbs .= " >> ";
-				$crumbs .= "<a href=$country_link >" . ucfirst($country) . "</a>";
-				$crumbs .= " >> ";
-				if($url_array[1] == 'product' && $lang == 'de') $url_array[1] = 'Produkt';
-				$crumbs .= "<span>" . ucfirst(t($url_array[1])) . "</span>";
-			}
-			else { // Product List
-			  $country = $url_array[0];
-			  $country_link = $url_base . $country;
-			  $product_type = $url_array[1];
-			  if($lang == 'de'){
-			  	switch ($country) {
-			  		case 'australia':
-			  			$country = 'australien';
-			  			break;
-			  		case 'new-zealand':
-			  			$country = 'neuseeland';
-			  			break;
-			  		case 'fiji':
-			  			$country = 'fidschi';
-			  			break;
-			  		default:
-			  			# code...
-			  			break;
-			  	}
-			  	switch ($product_type) {
-			  		case 'travel':
-			  			$product_type = 'reisen';
-			  			break;
-			  		case 'accommodation':
-			  			$product_type = 'unterkunft';
-			  			break;
-			  		case 'flight':
-			  			$product_type = 'flüge';
-			  			break;
-			  		case 'rental-car-campervans':
-			  			$product_type = 'Mietwagen & Wohnmobile';
-			  			break;
-			  		case 'wedding':
-			  			$product_type = 'heiraten';
-			  			break;
-			  		case 'work-travel':
-			  			$product_type = 'Work & Travel';
-			  			break;
-			  		default:
-			  			break;
-			  	}
-			  }
-			  else {
-			  	switch ($country) {
-			  		case 'new-zealand':
-			  			$country = "New Zealand";
-			  			break;
-			  		default:
-			  			# code...
-			  			break;
-			  	}
-			  	switch ($product_type) {
-			  		case 'rental-car-campervans':
-			  			$product_type = 'Rental Cars & Campervans';
-			  			break;
-			  		case 'work-travel':
-			  			$product_type = 'Work & Travel';
-			  			break;
-			  		default:
-			  			# code...
-			  			break;
-			  	}
-			  }
-				$crumbs .= " >> ";
-				$crumbs .= "<a href=$country_link >" . ucfirst($country) . "</a>";
-				$crumbs .= " >> ";
-				//if($url_array[1] == 'Product' && $lang == 'de') $url_array[1] == 'Produkt';
-				$crumbs .= "<span>" . ucfirst($product_type) . "</span>";
-			}
-		}
-		else if($url_array[0] == 'partner') { // Partner(Affiliate)
-			$country = $url_array[1];
-			$partner_type = $url_array[2];
-			$country_link = $url_base . $country;
-			if($lang == 'de') {
-				switch ($country) {
-					case 'australia':
-						$country = 'australien';
-						break;
-					case 'new-zealand':
-						$country = 'neuseeland';
-						break;
-					case 'fiji':
-						$country = 'fidschi';
-						break;
-					default:break;
-				}
-				switch ($partner_type) {
-					case 'flights':
-						$partner_type = 'flug';
-						break;
-					case 'rental-cars':
-						$partner_type = 'mietwagen';
-						break;
-					case 'travel-insurance':
-						$partner_type = 'reiseversicherung';
-						break;
-					default:break;
-				}
-			}
-			else {
-				if($country == 'new-zealand') $country = 'New Zealand';
-				switch ($partner_type) {
-					case 'bed-breakfast':
-						$partner_type = 'Bed & Breakfast';
-						break;
-					case 'rental-cars':
-						$partner_type = 'Rental Cars';
-						break;
-					case 'travel-insurance':
-						$partner_type = 'Travel Insurance';
-						break;
-					default:break;
-				}
-			}
-			$crumbs .= " >> ";
-			$crumbs .= "<a href=$country_link>" . ucfirst($country) . "</a>";
-			$crumbs .= " >> " . "<span>Partner</span>" . " >> ";
-			$crumbs .= "<span>" . ucfirst($partner_type) . "</span>";
-
-		}
-		else { // Taxonomy, Article, Contact, Basket or Inquiry
-			if($url_array_length > 1) { // Taxonomy or Thank-you
-				if($url_array[0] != 'node'){ // Taxonomy
-					$crumbs .= " >> ";
-					$crumbs .= "<span>" . ucfirst($url_array[1]) . "</span>";
-				}
-				// Do nothing to Thank-you page.
-			}
-			else { // Not Taxonomy
-				$crumbs .= " >> ";
-				$crumbs .= "<span>" . ucfirst($url_array[0]) . "</span>";
-			}
-		}
-		$crumbs .= "</div>";
-    return $crumbs;
-}
+  $url = drupal_get_path_alias(current_path());
+  $url_array = explode('/', $url);
+  $url_array_length = count($url_array);
+  $url_base = base_path();
+}*/
 
 
 /**

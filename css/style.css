@@ -1,4 +1,4 @@
-/************* Scaling **************/
+/************* Global **************/
 html{
 	overflow-y: scroll;
 	overflow-x: scroll;
@@ -469,27 +469,20 @@ div.logozone div.right{
 	float:left;
 	margin-top:20px;
 }
+
+
+/********* Red Bar *********/
+
 /***  Preface ***/
 .preface {
-	margin:10px 0;
-	background: #802E19;
+  float: right;
+  width: 240px;
 }
-.in-preface{
-	margin : 0 auto;
-	width:960px;
-}
-.region-preface {
-	overflow:hidden;
-}
-
-
-/********* Subpage/Preface *********/
 
 /*** Breadcrumb ***/
 .bg-breadcrumb {
 	color: #FFF;
 	background: #802E19;
-	margin: 0 -20px 0 0;
 }
 .bg-breadcrumb.green {
 	background: #7A8334;
@@ -501,17 +494,23 @@ div.logozone div.right{
 	color:#FFF;
 }
 .bg-breadcrumb div.breadcrumb{
-	padding-top: 5px;
+	padding: 15px 0;
+  float: left;
+  width: 720px;
 }
 #block-views-node-info-block-4 div.field-content,
 #block-views-node-german-downloads-block-4 div.field-content {
 	color: #FFF;
-    font-size: 30px;
-    font-weight: bold;
-    padding-top: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 5px;
 }
 
 /*** Country Title ***/
+#block-ptt-country-title-countryinfo {
+  float: left;
+  width: 720px;
+}
 #block-ptt-country-title-countryinfo h1 {
 	color: #FFF;
 	padding-top:5px;
@@ -520,41 +519,41 @@ div.logozone div.right{
 }
 
 /*** Country Tab ***/
-.region-head-country .block-menu {
+#block-menu-menu-countries {
 	float:left;
+  width: 720px;
 }
-.region-head-country .block-menu ul {
+#block-menu-menu-countries ul {
 	padding:0;
 	margin:0;
 	overflow:hidden;
 }
-.region-head-country .block-menu li {
+#block-menu-menu-countries li {
 	float:left;
 	list-style:none;
 	padding-right: 45px;
 }
-.region-head-country .block-menu ul.menu li a {
+#block-menu-menu-countries ul.menu li a {
 	color:#FFF;
 }
-.region-head-country .block-menu ul.menu li.active-trail a {
+#block-menu-menu-countries ul.menu li.active-trail a {
 	color:#525152;
 }
-.region-head-country .block-menu ul.menu li.active-trail div.before,.region-head-country .block-menu ul.menu li.active-trail div.text,
-.region-head-country .block-menu ul.menu li.active-trail div.after {
+#block-menu-menu-countries ul.menu li.active-trail div {
 	float:left;
 }
-.region-head-country .block-menu ul.menu li.active-trail div.before {
+#block-menu-menu-countries ul.menu li.active-trail div.before {
 	background-image:url('../img/home-li-before.png');
 	background-repeat:no-repeat;
 	width:10px;
 	height:46px;
 
 }
-.region-head-country .block-menu ul.menu li div.text {
+#block-menu-menu-countries ul.menu li div.text {
 	padding-top: 15px;
 	font-size: 20px;
 }
-.region-head-country .block-menu ul.menu li.active-trail div.text {
+#block-menu-menu-countries ul.menu li.active-trail div.text {
 	background-image:url('../img/home-li-text.png');
 	background-repeat:repeat-x;
 	height: 31px;
@@ -562,7 +561,7 @@ div.logozone div.right{
 	padding-right: 10px;
   padding-left:10px;
 }
-.region-head-country .block-menu ul.menu li.active-trail div.after{
+#block-menu-menu-countries ul.menu li.active-trail div.after{
 	background-image:url('../img/home-li-after.png');
 	background-repeat:no-repeat;
 	width:10px;
@@ -571,15 +570,11 @@ div.logozone div.right{
 
 /*** Search Block ***/
 #block-search-form {
-	float:right;
-	margin: 15px 0 0 auto;
-	/*top:10px;*/
-}
-#block-search-form form div.form-type-textfield {
-	width: 200px;
+	float:left;
+	margin: 15px 0 0 5px;
 }
 #block-search-form form div.form-type-textfield input {
-	width: 180px;
+	width: 160px;
 }
 #block-search-form form div.form-actions input {
 	color: #525152;
@@ -957,3 +952,5 @@ div.logozone div.right{
 	margin: 0;
 	float: none;
 }
+
+/* Simplenews */
