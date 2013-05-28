@@ -28,7 +28,11 @@
 		<?php if($content['body']['#object']->field_language_offer['und'][0]['value']) { ?>
 		<div class="info3">
 			<b class="label">Language :</b>
-			<?php echo $content['body']['#object']->field_language_offer['und'][0]['value']; ?>
+      <?php
+        foreach ($content['body']['#object']->field_language_offer['und'] as $lang_offer) {
+          echo $lang_offer['value'] . " ";
+        }
+      ?>
 		</div>
 		<?php } ?>
 
@@ -106,8 +110,9 @@
 		<?php if($content['body']['#object']->field_language_offer['und'][0]['value']) { ?>
 		<div class="info3">
 			<b class="label">Sprache :</b>
-			<?php
-					$language_value = $content['body']['#object']->field_language_offer['und'][0]['value'];
+      <?php
+        foreach ($content['body']['#object']->field_language_offer['und'] as $lang_offer) {
+          $language_value = $lang_offer['value'];
 					switch($language_value) {
 					case 'German':
 						$language_value = 'Deutsch';
@@ -119,8 +124,9 @@
 						$language_value = 'Neutral';
 						break;
 					}
-					echo $language_value;
-			?>
+					echo $language_value . " ";
+        }
+      ?>
 		</div>
 		<?php } ?>
 
