@@ -27,7 +27,6 @@ body {
 .subheader {
 }
 #middle {
-	padding-bottom: 550px;
 }
 #middle div.mainpage {
 	margin-bottom: 20px;
@@ -35,11 +34,9 @@ body {
 }
 #footer {
 	background: #11556C;
-	min-height:550px;
 	margin: 40px -20px 0 0;
 	bottom: 0;
 	clear:both;
-	position: absolute;
 	width:100%;
 	color: white;
 	font-size: 12px;
@@ -690,7 +687,7 @@ div.logozone div.right{
 #block-views-node-german-downloads-block-3 div.content div.field-content {
 	width: 120px;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 14px;
 	margin-left: 5px;
 }
 
